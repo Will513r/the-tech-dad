@@ -1,20 +1,30 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
-import HomePage from "./pages/HomePage.js";
-import UserPage from "./pages/UserPage.js";
+import Header_bar from "./Navbar";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home"; 
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Youtube from "./pages/Youtube";
+import { BrowserRouter } from "react-router-dom";
+
+
+
 
 
  function App() {
+ 
   return (
-    
-    <Router>
-    <Routes>
-    
-      <Route exact path="/" element={<HomePage/>} />
-      <Route path="/:id" element={<UserPage/>} />
-    </Routes>
-    </Router>
+    <>
+      <Header_bar />
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
